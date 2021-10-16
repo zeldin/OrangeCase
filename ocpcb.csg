@@ -2,10 +2,11 @@ module OrangeCartPCB() {
   $fn=21;
   rotate([-180, 0, 90]) translate([-80, 84.74, -1.6]) {
     color("green") translate([49, -130.08, 0]) difference() {
-      cube([62, 50, 1.6]);
+      cube([62, 60, 1.6]);
       translate([-1, -1, -0.3]) cube([3.171, 26, 2]);
       translate([62-2.171, -1, -0.3]) cube([3.171, 26, 2]);
-      translate([37, 45.58, -0.3]) cube([63-37, 51-45.5, 2]);
+      translate([37, 45.58, -0.3]) cube([63-37, 61-45.5, 2]);
+      translate([13.66, 52, -0.3]) cube([63-13.66, 61-52, 2]);
       translate([80-49, 130.08-84.74, -0.3]) cylinder(2.0, 1.75, 1.75);
     }
     translate([49.36, -88.125, 0]) {
