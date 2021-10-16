@@ -36,11 +36,11 @@ module CartTop(rrnet_hole = false, rrnet_view = false, pcb_view = false) {
     color("orange") c64_cart_top(rrnet_hole);
     OrangeCartPCBApertures();
     if(rrnet_hole)
-      translate([0, 0, -6.5]) RRNetMk3Apertures();
+      translate([0, 0, -7.6]) RRNetMk3Apertures();
   }
   
   if (rrnet_view)
-    translate([0, 0, -6.5]) RRNetMk3();
+    translate([0, 0, -7.6]) RRNetMk3();
   if (pcb_view)
     OrangeCartPCB();
 };

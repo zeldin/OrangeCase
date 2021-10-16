@@ -23,11 +23,11 @@ module RRNetMk3() {
           }          
         }
     }
-    translate([58.42-21.17, 26.6, -2.1]) color("lightgreen") {
-      sphere(1.5); cylinder(2, 1.5, 1.5);
+    translate([58.42-21.17, 26.6, -3.6]) color("lightgreen") {
+      sphere(1.5); cylinder(3.5, 1.5, 1.5);
     }
-    translate([58.42-17.06, 26.6, -2.1]) color("yellow") {
-      sphere(1.5); cylinder(2, 1.5, 1.5);
+    translate([58.42-17.06, 26.6, -3.6]) color("yellow") {
+      sphere(1.5); cylinder(3.5, 1.5, 1.5);
     }
   }
 };
@@ -41,7 +41,7 @@ module RRNetMk3Apertures() {
             translate([3.5, 0, -3])
               cube([7, 23, 4.5]);
       }
-    translate([58.42-21.17, 26.6, -10]) cylinder(10, 1.6, 1.6);
-    translate([58.42-17.06, 26.6, -10]) cylinder(10, 1.6, 1.6);
+    translate([58.42-21.17, 26.6, -10]) cylinder(10, 1.85, 1.85);
+    translate([58.42-17.06, 26.6, -10]) cylinder(10, 1.85, 1.85);
   }
 }
