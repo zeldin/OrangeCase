@@ -1,0 +1,46 @@
+// Create openings for RR-Net Mk3
+Enable_RRNet_Mk3_holes = true;
+
+// Display RR-Net Mk3 in place
+Enable_RRNet_Mk3_view = false;
+
+// Display OrangeCart PCB in place
+Enable_OrangeCart_PCB_view = false;
+
+// Make a cross section
+Cross_Section_view = -1; // [-1:None, 0:A, 90:B, 180:C, 270:D]
+
+use <ocpcb.csg>
+use <rrnetmk3.csg>
+use <c64-cartridge.scad>
+
+difference() {
+  CartTop(Enable_RRNet_Mk3_holes, Enable_RRNet_Mk3_view,
+          Enable_OrangeCart_PCB_view);
+  if (Cross_Section_view >=0)
+    rotate([0, 0, Cross_Section_view])
+      translate([-100, 0, -50]) cube(100);
+}
+
+module c64_cart_top(usb_reinforce) {
+  // c64-cartridge by Laurence Gonsalves
+  // License: cc by-sa
+  // https://www.thingiverse.com/thing:1702546
+  translate([-46.5, 0, 0]) {
+    rotate([180, 0, 90]) half(true, usb_reinforce);
+  }
+}
+
+module CartTop(rrnet_hole = false, rrnet_view = false, pcb_view = false) {
+  difference() {
+    color("orange") c64_cart_top(rrnet_hole);
+    OrangeCartPCBApertures();
+    if(rrnet_hole)
+      translate([0, 0, -6.5]) RRNetMk3Apertures();
+  }
+  
+  if (rrnet_view)
+    translate([0, 0, -6.5]) RRNetMk3();
+  if (pcb_view)
+    OrangeCartPCB();
+};

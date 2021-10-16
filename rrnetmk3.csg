@@ -1,0 +1,47 @@
+module RRNetMk3() {
+  $fn=21;
+  translate([-35.83, -18.90, 0]) {
+    difference() {
+      color("green")
+        cube([58.42, 47.51, 1.6]);
+      translate([35.83, 18.90, -0.3])
+        cylinder(2.0, 3.695, 3.695);
+      translate([53.85, 17.41, -0.3])
+        cube([5, 31, 2]);
+    }
+    translate([53.85-16.76, 47.51+3.38, 1.6]) {
+      color("gray")
+        difference() {
+          translate([0, -21.1, 0])
+            cube([16, 21.1, 13.45]);
+          translate([2.16, -12, 3.5]) {
+            cube([11.68, 23, 6.60]);
+            translate([2.79, 0, -1.7])
+              cube([6.10, 23, 1.7]);
+            translate([4.265, 0, -3.4])
+              cube([3.15, 23, 1.7]);
+          }          
+        }
+    }
+    translate([58.42-21.17, 26.6, -2.1]) color("lightgreen") {
+      sphere(1.5); cylinder(2, 1.5, 1.5);
+    }
+    translate([58.42-17.06, 26.6, -2.1]) color("yellow") {
+      sphere(1.5); cylinder(2, 1.5, 1.5);
+    }
+  }
+};
+
+module RRNetMk3Apertures() {
+  $fn=37;
+  translate([-35.83, -18.90, 0]) {
+    translate([53.85-16.76, 47.51+3.38, 1.6])
+      translate([1, -12, 2.5]) {
+            cube([14, 23, 10]);
+            translate([3.5, 0, -3])
+              cube([7, 23, 4.5]);
+      }
+    translate([58.42-21.17, 26.6, -10]) cylinder(10, 1.6, 1.6);
+    translate([58.42-17.06, 26.6, -10]) cylinder(10, 1.6, 1.6);
+  }
+}
