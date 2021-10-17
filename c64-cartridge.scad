@@ -337,7 +337,7 @@ module cart() {
 }
 
 
-module half(top, usb_reinforce) {
+module half(top, usb_reinforce, sdcard_reinforce) {
     module top_mask() {
         translate([-CART_WIDTH/2-EPSILON, -EPSILON, -EPSILON])
             difference() {
@@ -356,6 +356,7 @@ module half(top, usb_reinforce) {
 			translate([-EPSILON, yl-2*WALL_THICKNESS, 0]) cube([2*WALL_THICKNESS+EPSILON, 2*WALL_THICKNESS+EPSILON, zl + 2*1]);
 			translate([xl-2*WALL_THICKNESS, yl-2*WALL_THICKNESS, 0]) cube([2*WALL_THICKNESS+EPSILON, 2*WALL_THICKNESS+EPSILON, zl + 2*1]);
 		        if(usb_reinforce) translate([xl-WALL_THICKNESS, yl-31, 0]) cube([WALL_THICKNESS+EPSILON, /*11.0*/31.0, zl]);
+			if(sdcard_reinforce) translate([-EPSILON, post_y-(CONNECTOR_LENGTH+WALL_THICKNESS)-12.11, 0]) cube([WALL_THICKNESS+EPSILON, 17.87, zl]);
                     }
             }
     }

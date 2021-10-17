@@ -22,18 +22,18 @@ difference() {
       translate([-100, 0, -50]) cube(100);
 }
 
-module c64_cart_top(usb_reinforce) {
+module c64_cart_top(usb_reinforce, sdcard_reinforce) {
   // c64-cartridge by Laurence Gonsalves
   // License: cc by-sa
   // https://www.thingiverse.com/thing:1702546
   translate([-46.5, 0, 0]) {
-    rotate([180, 0, 90]) half(true, usb_reinforce);
+    rotate([180, 0, 90]) half(true, usb_reinforce, sdcard_reinforce);
   }
 }
 
 module CartTop(rrnet_hole = false, rrnet_view = false, pcb_view = false) {
   difference() {
-    color("orange") c64_cart_top(rrnet_hole);
+    color("orange") c64_cart_top(rrnet_hole, true);
     OrangeCartPCBApertures();
     if(rrnet_hole)
       translate([0, 0, -7.6]) RRNetMk3Apertures();
