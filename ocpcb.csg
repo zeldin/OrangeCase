@@ -16,8 +16,10 @@ module OrangeCartPCB() {
       color("gray") translate([13.55-14.05, -13.1, -1.28]) cube([14.05, 13.1, 1.28]);
       color("black") translate([13.55-14.05-1.9, -(13.1-5.72+11/2), -0.83]) cube([10, 11, 0.5]);
     }
-    translate([102.45, -90.4, 1.6])
-      color("gray") translate([0, -7.7/2, 0]) cube([9.25, 7.7, 3.9]);
+    translate([109.75, -95.62, 1.6])
+      color("gray") translate([2.6, 8.64/2, 0]) {
+        translate([-7.35, -8.94/2, 0]) cube([7.35, 8.94, 3.31]);
+      }
     translate([55.155, -73.63, 1.6+4])
       color("white") {
 	cylinder(8.6-2.5, 2.5, 2.5);
@@ -36,8 +38,8 @@ module OrangeCartPCBApertures() {
   rotate([-180, 0, 90]) translate([-80, 84.74, -1.6]) {
     translate([49-2.5, -(130.08-34.23), 0])
       translate([-5, -1, -1.4]) cube([10, 15.87+2, 1.6+1.4]);
-    translate([102.45, -90.4, 1.6])
-      translate([5, -4.5, -0.5]) cube([8, 9, 5]);
+    translate([109.75, -95.62, 1.6])
+      translate([0, 8.64/2-10.34/2, -0.5]) cube([8, 10.34, 4.5]);
     translate([55.155, -73.63, 1.6+0.5])
 	cylinder(15, 3, 3);
     translate([55.05, -80.33, 1.6+0.5])
